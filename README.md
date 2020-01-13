@@ -1,5 +1,5 @@
 # EU_ETS
-R script and raw data for generating figures in paper: Rea (2019). "The EU emissions trading scheme: protection via commodification?", Culture, Practice & Europeanization 4 (1), 48-73. 
+R script and raw data for generating figures in Rea (2019). "The EU emissions trading scheme: protection via commodification?", Culture, Practice & Europeanization 4 (1), 48-73. 
 
 See the paper here: https://www.uni-flensburg.de/fileadmin/content/seminare/soziologie/dokumente/culture-practice-and-europeanization/cpe-vol.4-no.1/seeliger-sommer-cpe-2019-vol.4-nr.1.pdf#page=50
 
@@ -8,6 +8,7 @@ See the journal here: https://www.uni-flensburg.de/soziologie/culture-practice-a
 All visualization and analysis completed in R.
 
 Raw auction price data downloaded from: https://sandbag.org.uk/carbon-price-viewer/.
+
 Raw auction revenue data downloaded from: https://www.eex.com/en/market-data/environmental-markets/auction-market/european-emission-allowances-auction/european-emission-allowances-auction-download.
 
 All scripts are built around the following files and file structure. Files included in this repository marked with * . Files created/written by script itself are not listed.
