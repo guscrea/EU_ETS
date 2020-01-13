@@ -3,8 +3,7 @@
 ## Chris Rea
 ## Last Modified: January 13, 2019
 
-######################## Install and Load Packages ########################
-
+###### INSTALL PACKAGES ######
 
 install.packages("dplyr")
 install.packages("tidyr")
@@ -23,6 +22,7 @@ install.packages("ggpubr")
 install.packages("zoo")
 install.packages("tidyquant")
 
+###### LOAD PACKAGES ######
 
 library(dplyr)
 library(tidyr)
@@ -43,30 +43,15 @@ library(ggpubr)
 library(zoo)
 library(tidyquant)
 
-########################################################################
+###### SET WD ######
+setwd("/Users/rea.115/Dropbox/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization")
 
-#make sure that "egg" is not installed and loaded already.
-remove.packages("egg")
-detach("package:egg", unload=TRUE)
+####### LOAD DATA FOR PLOTS ##########
 
-# ... check to make sure that ggpubr is not loaded already...
-remove.packages("ggpubr")
-detach("package:ggpubr", unload=TRUE)
-
-#... and reinstall ggpubr.
-install.packages("ggpubr")
-library(ggpubr)
-
-########################################################################
-
-
-
-####### Load data for Plots ##########
-
-ets_path = "/Users/chrisrea/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization/EU_ETS_Auctions_Revenues/EU_ETS_Weekly_price_2008_04_to_2019_01.csv"
+ets_path = "EU_ETS_Auctions_Revenues/EU_ETS_Weekly_price_2008_04_to_2019_01.csv"
 ets_price = read.csv(ets_path, header = TRUE)
 
-auctions_path = "/Users/chrisrea/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization/EU_ETS_Auctions_Revenues/EU_ETS_Auctions_Revenues_by_2013_to_Jan2019.csv"
+auctions_path = "EU_ETS_Auctions_Revenues/EU_ETS_Auctions_Revenues_by_2013_to_Jan2019.csv"
 auct_rev = read.csv(auctions_path, header = TRUE)
 
 ## Format date as a date
@@ -111,8 +96,18 @@ auct_rev_cln <-  auct_rev[auct_rev$Country!="XA"&
 auct_rev_noPL <- auct_rev_cln[auct_rev_cln$Country!="PL", ]
 
 
+###### SAVE FUNCTION ######
 
-##### Make Plot of EUA PRICE ######
+# Save plot (function)
+save_plot <- function(root,addon,w,h,path){
+  ggsave(paste(root,addon,".png",
+               sep = ""), plot = last_plot(), path = path,
+         width = w, height = h, units = "in", dpi = 380,
+         limitsize = FALSE)
+}
+
+
+##### PLOT EUA PRICE ######
 ggplot(ets_price,
        aes(x = date_num,
            y = Price #pct_max_norm
@@ -130,7 +125,7 @@ ggplot(ets_price,
            colour = "#8E8E8E") +
   scale_x_date(labels = date_format("%b %Y"),
                date_breaks = "3 month") +
-  scale_y_continuous(name = "Price in eur/tCO2",
+  scale_y_continuous(name = "Price in €/tCO2",
                      breaks=seq(-5,30,5)) +
   #  scale_colour_manual(name = "State (Land)", 
   #                      breaks = breaks_env,
@@ -154,6 +149,10 @@ ggplot(ets_price,
                       "2019-01-14"),
                ylim=c(-0.5,31),
                expand = FALSE)
+
+save_plot("EU_ETS_EUA_Price",
+          "2008_04_01_to_2019_01_14",
+          12,5,"Figures")
 
 
 
@@ -270,4 +269,8 @@ ggarrange(per_auction, total_rev,
           ncol = 1, nrow = 2,
           labels = c("A","B"),
           align = "v")
+
+save_plot("EU_ETS_per_auction_and_cum_rev",
+          "2012_06_01_to_2019_01_20",
+          13,13,"Figures")
 
