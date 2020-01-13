@@ -50,7 +50,7 @@ library(zoo)
 library(tidyquant)
 
 ###### SET WD ######
-setwd("/Users/rea.115/Dropbox/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization")
+setwd("your_working_directory")
 
 ####### LOAD DATA FOR PLOTS ##########
 
