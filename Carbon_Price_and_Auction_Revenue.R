@@ -1,5 +1,5 @@
-### Script for plotting EU ETS Historic Carbon Price
-### and Revenue, April 2008 to January 2019
+### Script for plotting EU ETS Historic Carbon Price 
+### April 2008 to January 2019
 ## Chris Rea
 ## Last Modified: January 13, 2019
 
@@ -50,14 +50,14 @@ library(zoo)
 library(tidyquant)
 
 ###### SET WD ######
-setwd("[your_working_directory]")
+setwd("/Users/rea.115/Dropbox/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization")
 
 ####### LOAD DATA FOR PLOTS ##########
 
-ets_path = "EU_ETS_Auctions_Revenues/EU_ETS_Weekly_price_2008_04_to_2019_01.csv"
+ets_path = "EU_ETS_Auctions_Price_and_Revenues/EU_ETS_Weekly_price_2008_04_to_2019_01.csv"
 ets_price = read.csv(ets_path, header = TRUE)
 
-auctions_path = "EU_ETS_Auctions_Revenues/EU_ETS_Auctions_Revenues_by_2013_to_Jan2019.csv"
+auctions_path = "EU_ETS_Auctions_Price_and_Revenues/EU_ETS_Auctions_Revenues_by_2013_to_Jan2019.csv"
 auct_rev = read.csv(auctions_path, header = TRUE)
 
 ## Format date as a date
