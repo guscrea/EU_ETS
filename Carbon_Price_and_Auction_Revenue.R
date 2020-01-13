@@ -6,6 +6,9 @@
 ## Note: not all below packages are required. Apologies.
 ## Script assumes file structure specified in README.
 
+## Raw auction price data downloaded from: https://sandbag.org.uk/carbon-price-viewer/
+## Raw auction revenue data downloaded from: https://www.eex.com/en/market-data/environmental-markets/auction-market/european-emission-allowances-auction/european-emission-allowances-auction-download
+
 ###### INSTALL PACKAGES ######
 
 install.packages("dplyr")
