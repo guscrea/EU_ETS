@@ -9,6 +9,7 @@ All visualization and analysis completed in R.
 
 Raw auction price data downloaded from: https://sandbag.org.uk/carbon-price-viewer/.
 
+
 Raw auction revenue data downloaded from: https://www.eex.com/en/market-data/environmental-markets/auction-market/european-emission-allowances-auction/european-emission-allowances-auction-download.
 
 All scripts are built around the following files and file structure. Files included in this repository marked with * . Files created/written by script itself are not listed.
