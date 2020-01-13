@@ -1,7 +1,10 @@
-### Script for plotting EU ETS Historic Carbon Price 
-### April 2008 to January 2019
+### Script for plotting EU ETS Historic Carbon Price
+### and Revenue, April 2008 to January 2019
 ## Chris Rea
 ## Last Modified: January 13, 2019
+
+## Note: not all below packages are required. Apologies.
+## Script assumes file structure specified in README.
 
 ###### INSTALL PACKAGES ######
 
@@ -44,7 +47,7 @@ library(zoo)
 library(tidyquant)
 
 ###### SET WD ######
-setwd("/Users/rea.115/Dropbox/Professional/Research/__Emissions_Trading/EU_ETS_Special_Issue_Culture_Practice_and_Europeanization")
+setwd("[your_working_directory]")
 
 ####### LOAD DATA FOR PLOTS ##########
 
